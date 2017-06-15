@@ -1,0 +1,13 @@
+.idea
+dist
+node_modules
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+
+chat-plugin/.idea
+chat-plugin/dist
+chat-plugin/node_modules
+chat-plugin/npm-debug.log
+chat-plugin/yarn-debug.log*
+chat-plugin/yarn-error.log*

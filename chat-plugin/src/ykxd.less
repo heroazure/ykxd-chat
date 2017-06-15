@@ -1,0 +1,55 @@
+@z-index1:100000;
+@right1:10px;
+@bottom1:10px;
+#ykxd-pane-chat{
+  position: fixed;
+  right:@right1;
+  bottom:@bottom1;
+  z-index: @z-index1;
+  display: none;
+  width:400px;
+  height:600px;
+  border:1px solid #aaa;
+  box-shadow: 0 0 3px rgba(0,0,0,.5);
+  background: #fff;
+  padding:0;
+  &.mobile{
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    width:auto;
+    height:auto;
+  }
+  iframe{
+    width:100%;
+    height:100%;
+  }
+}
+#ykxd-pane-btn{
+  position: fixed;
+  z-index: @z-index1;
+  right:@right1;
+  bottom:@bottom1;
+  width:200px;
+  height:50px;
+  line-height:50px;
+  background-color: #00f;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  &.mobile{
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+  }
+}
+/*#ykxd-close{
+  position: absolute;
+  right:5px;
+  top:5px;
+  font-size:24px;
+  line-height:24px;
+  cursor: pointer;
+}*/
