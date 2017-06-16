@@ -49,14 +49,17 @@
       </div>
       <div class="chatting-holder">
         <div class="holder-left" id="uploadImgP">
-          <a>表情</a>
+          <a @click="toggleEmoji">表情</a>
           <a id="uploadImg">图片</a>
         </div>
         <div class="holder-right">
           <button @click="send">发送</button>
         </div>
+        <emoji-selector v-model="showEmoji"></emoji-selector>
       </div>
+
     </div>
+
   </div>
 </template>
 
@@ -241,7 +244,8 @@
   }
 </style>
 <script>
-  import upload from './util/util'
+  import upload from './util/upload'
+  import emojiSelector from './components/EmojiSelector.vue'
   export default {
     name: 'app',
     data(){
@@ -250,6 +254,7 @@
         inputContent: '',
         websocket: null,
         oContent:null,
+        showEmoji:false,
       }
     },
     mounted(){
@@ -311,8 +316,13 @@
           this.inputContent = '';
           setTimeout(() => this.oContent.scrollTop = this.oContent.scrollHeight, 0);
         };
+      },
+      toggleEmoji(){
+          this.showEmoji = ! this.showEmoji
       }
     },
-    components: {}
+    components: {
+      emojiSelector
+    }
   }
 </script>
