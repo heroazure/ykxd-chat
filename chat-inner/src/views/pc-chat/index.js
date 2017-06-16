@@ -4,6 +4,8 @@
 import 'assets/css/index.less'
 import './style.less'
 import Vue from 'vue'
+import Pane from './Pane.vue'
+Vue.component(Pane.name,Pane)
 new Vue({
     el:'#app',
     methods:{

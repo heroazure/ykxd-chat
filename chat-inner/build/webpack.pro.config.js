@@ -4,7 +4,7 @@
 var webpack = require('webpack')
 var webpackBaseConfig = require('./webpack.base.config')
 var merge = require('webpack-merge')
-var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+// var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 module.exports = merge(webpackBaseConfig, {
     plugins: [
         new webpack.DefinePlugin({

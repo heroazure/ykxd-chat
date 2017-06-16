@@ -37,19 +37,22 @@
     "rimraf": "^2.6.1",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
+    "vue-loader": "^12.2.1",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.3.4",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.4",
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "engine.io": "~3.1.0",
     "express": "^4.15.3",
     "jquery": "^3.2.1",
-    "socket.io": "^2.0.3",
-    "engine.io": "~3.1.0",
     "object-assign": "~4.1.1",
+    "socket.io": "^2.0.3",
     "socket.io-adapter": "~1.1.0",
     "socket.io-client": "~2.0.2",
     "socket.io-parser": "~3.1.1",
-    "vue": "^2.3.2"
+    "vue": "2.3.4"
   }
 }
