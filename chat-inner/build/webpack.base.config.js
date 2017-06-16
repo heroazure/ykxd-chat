@@ -41,7 +41,19 @@ module.exports={
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    loaders:{
+                        less:extractTextViews.extract({
+                            use: ['css-loader','postcss-loader', 'less-loader'],
+                            fallback: 'style-loader'
+                        }),
+                        css:extractTextViews.extract({
+                            use: ['css-loader','postcss-loader'],
+                            fallback: 'style-loader'
+                        })
+                    }
+                }
             },
             {
                 test: /\.js$/,
