@@ -1,0 +1,3 @@
+testSocketServer.js 是本地用做websocket服务测试程序
+node testSocketServer 就可以运行该程序
+工作在8001端口
