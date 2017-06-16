@@ -19,7 +19,7 @@ module.exports = merge(webpackBaseConfig, {
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-        host:'172.16.10.196',
+        host:'localhost',
         port: 9999,
         open:true,
         contentBase: [resolve('dist')],
