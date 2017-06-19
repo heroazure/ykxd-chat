@@ -1,7 +1,7 @@
 <template>
   <div class="emoji-holder" v-show="show">
-    <i class="emoji-control emoji-smile" @click="chooseEmoji(':smile:')"></i>
-    <i class="emoji-control emoji-laughing" @click="chooseEmoji(':laughing:')"></i>
+    <i class="emoji-control emoji-smile" @click="chooseEmoji('smile')"></i>
+    <i class="emoji-control emoji-laughing" @click="chooseEmoji('laughing')"></i>
   </div>
 </template>
 <style lang="less" scoped>
@@ -37,6 +37,7 @@
 
 </style>
 <script>
+  import emojiMap from './emoji'
   export default{
     data(){
       return {
@@ -57,6 +58,14 @@
           console.log('这里通知父组件实现双向通行')
       }
 
+    },
+    methods: {
+      chooseEmoji(key){
+        let val = emojiMap[key]
+        this.$emit('selected',val)
+        this.show = false
+
+      }
     },
     components: {}
   }

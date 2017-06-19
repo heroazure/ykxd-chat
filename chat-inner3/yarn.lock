@@ -6881,6 +6881,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "http://registry.npm.taobao.org/tweetnacl/download/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
+twemoji@^2.3.0:
+  version "2.3.0"
+  resolved "http://registry.npm.taobao.org/twemoji/download/twemoji-2.3.0.tgz#45b4af4292d42f2fdf2d8ec5b86d5a8a996bc018"
+
 type-check@~0.3.2:
   version "0.3.2"
   resolved "http://registry.npm.taobao.org/type-check/download/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"

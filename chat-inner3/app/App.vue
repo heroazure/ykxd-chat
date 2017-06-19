@@ -21,7 +21,7 @@
               <span class="msg-author">我</span>
               <img :src="item.avatarUrl" alt="">
             </div>
-            <div class="msg-content">{{item.text}}</div>
+            <div class="msg-content" v-html="item.text_filter "></div>
           </div>
 
           <div v-else class="chatting-item other clearfix">
@@ -33,7 +33,7 @@
               <span class="loc">[{{item.loc}}]</span>
               <span class="msg-author">服务器</span>
             </div>
-            <div class="msg-content">{{ item.text }}</div>
+            <div class="msg-content" v-html="item.text_filter "></div>
           </div>
 
         </div>
@@ -55,7 +55,7 @@
         <div class="holder-right">
           <button @click="send">发送</button>
         </div>
-        <emoji-selector v-model="showEmoji"></emoji-selector>
+        <emoji-selector v-model="showEmoji" @selected="onSelected"></emoji-selector>
       </div>
 
     </div>
@@ -246,6 +246,7 @@
 <script>
   import upload from './util/upload'
   import emojiSelector from './components/EmojiSelector.vue'
+  import twemoji from 'twemoji'
   export default {
     name: 'app',
     data(){
@@ -273,7 +274,8 @@
       websocket.onmessage = (({data}) => {
         this.msgs.push({
           self:false,
-          text:data
+          text:data,
+          text_filter:twemoji.parse(data)
         })
         setTimeout(()=>{
           this.oContent.scrollTop = this.oContent.scrollHeight;
@@ -302,6 +304,15 @@
         })
 
     },
+    filters:{
+      textFilter(text){
+        let val = twemoji.parse(text)
+        return val
+//        let val = twemoji.parse('I \u2764\uFE0F emoji!')
+//        return val
+      }
+
+    },
     methods: {
       send(){
 
@@ -311,14 +322,20 @@
           this.websocket.send(this.inputContent);
           this.msgs.push({
             self: true,
-            text: this.inputContent
+            text: this.inputContent,
+            text_filter:twemoji.parse(this.inputContent)
           })
           this.inputContent = '';
           setTimeout(() => this.oContent.scrollTop = this.oContent.scrollHeight, 0);
         };
+
       },
       toggleEmoji(){
           this.showEmoji = ! this.showEmoji
+      },
+      onSelected(val){
+          console.log(val)
+        this.inputContent= this.inputContent + val
       }
     },
     components: {
