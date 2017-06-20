@@ -4,16 +4,16 @@
 import './ykxd.less'
 let toChatBtn=document.createElement('div')
 toChatBtn.setAttribute('id','ykxd-pane-btn')
-toChatBtn.innerHTML='点我聊天'
+toChatBtn.innerHTML='<span class="yk-icon icon-duihua"></span>有问题随时可以问我'
 let toChatPane=document.createElement('div')
 toChatPane.setAttribute('id','ykxd-pane-chat')
 let clientWidth=document.documentElement.getBoundingClientRect().width
-let innerText='<iframe id="iframe" src="http://172.16.10.196:9999/chat/mobile" frameborder="0" allowtransparency="no" scrolling="no"></iframe>'
+let innerText='<iframe id="iframe" src="http://localhost:9999/chat/mobile" frameborder="0" allowtransparency="no" scrolling="no"></iframe>'
 toChatPane.setAttribute('class','mobile')
 toChatBtn.setAttribute('class','mobile')
 //假设大于640为pc端
 if(clientWidth>640){
-  innerText='<iframe id="iframe" src="http://172.16.10.196:9999/chat/pc" frameborder="0" allowtransparency="no" scrolling="no"></iframe>'
+  innerText='<iframe id="iframe" src="http://localhost:9999/chat/pc" frameborder="0" allowtransparency="no" scrolling="no"></iframe>'
   toChatPane.setAttribute('class','pc')
   toChatBtn.setAttribute('class','pc')
 }
@@ -39,9 +39,10 @@ if(companyId){
 
 }
 
-//隐藏点我聊天按钮
-ykxd.hideBtn=function () {
+//显示聊天窗口
+ykxd.showChatPane=function () {
   toChatBtn.style.display='none'
+  toChatPane.style.display='block'
 }
 
 //来自聊天子窗口的消息监听

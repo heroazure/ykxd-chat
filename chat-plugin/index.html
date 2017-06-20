@@ -17,11 +17,10 @@
           s = ei.getElementsByTagName(q)[0];
         j.async = true;
         j.charset = 'UTF-8';
-        j.src = 'http://172.16.10.196:8080/ykxd-chat.js';
+        j.src = 'http://localhost:8080/ykxd-chat.js';
         s.parentNode.insertBefore(j, s);
         j.onload=j.onreadystatechange=function () {
-          //console.log(document.getElementById('ykxd-pane-btn'))
-          //ykxd.hideBtn()
+          ykxd.showChatPane()
         }
       })(window, document, 'script', 'ykxd');
     </script>

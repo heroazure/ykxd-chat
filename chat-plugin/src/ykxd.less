@@ -1,16 +1,29 @@
+@font-face {
+  font-family: "ali-icon";
+  src: url('./assets/fonts/iconfont.eot?t=1482723628143'); /* IE9*/
+  src: url('./assets/fonts/iconfont.eot?t=1482723628143#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./assets/fonts/iconfont.woff?t=1482723628143') format('woff'), /* chrome, firefox */ url('./assets/fonts/iconfont.ttf?t=1482723628143') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('./assets/fonts/iconfont.svg?t=1482723628143#iconfont') format('svg'); /* iOS 4.1- */
+}
+.yk-icon {
+  font-family:"ali-icon" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-duihua:before { content: "\e62f"; }
 @z-index1:100000;
-@right1:10px;
-@bottom1:10px;
+@right1:20px;
+@bottom1:20px;
+@primary-color:#1f95e7;
 #ykxd-pane-chat{
   position: fixed;
   right:@right1;
   bottom:@bottom1;
   z-index: @z-index1;
   display: none;
-  width:400px;
-  height:600px;
-  border:1px solid #aaa;
-  box-shadow: 0 0 3px rgba(0,0,0,.5);
+  width:320px;
+  height:480px;
+  box-shadow: 0 0 6px rgba(187,187,187,.5);/*no*/
   background: #fff;
   padding:0;
   &.mobile{
@@ -30,26 +43,27 @@
   position: fixed;
   z-index: @z-index1;
   right:@right1;
-  bottom:@bottom1;
+  bottom:0;
   width:200px;
-  height:50px;
-  line-height:50px;
-  background-color: #00f;
+  height:46px;
+  line-height: 46px;
+  background-color: @primary-color;
+  font-size:14px;
   color: #fff;
   text-align: center;
   cursor: pointer;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   &.mobile{
     left:0;
     right:0;
     bottom:0;
     width:100%;
   }
+  .icon-duihua{
+    color: #fff;
+    font-size:24px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
 }
-/*#ykxd-close{
-  position: absolute;
-  right:5px;
-  top:5px;
-  font-size:24px;
-  line-height:24px;
-  cursor: pointer;
-}*/

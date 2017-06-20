@@ -3,30 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>聊天页面</title>
+    <title>聊天窗口</title>
 </head>
 <body>
 <div id="app">
-    <span id="close" @click="onClose">&times;</span>
-    我是pc端聊天页面
-    <span v-text="kk"></span>
-    <ykxd-pane></ykxd-pane>
+    <header class="header">
+        <div class="header-left">
+            <img class="merchant-head" src="<%= require('./img/tmp.png') %>" alt="商家头像">
+            <div class="merchant-desc">
+                <span class="b1">杭州金夫人体验店</span><br>
+                尽心为您服务
+            </div>
+        </div>
+        <div class="header-right">
+            <span @click="onClose" class="yk-icon icon-xiangxiajiantou"></span>
+        </div>
+    </header>
+    <section class="content">
+
+    </section>
+    <section class="entry">
+        <textarea class="entry-val" name="entry" rows="2" placeholder="请输入"></textarea>
+        <div class="entry-operator">
+            <div class="left">
+                <span class="yk-icon icon-biaoqing"></span>
+                <span class="yk-icon icon-tupian"></span>
+                <span class="yk-icon icon-wodeerweima1"></span>
+            </div>
+            <div class="right">
+                <button type="button" class="btn-send">发送</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        客服软件由云蝌技术支持
+    </footer>
 </div>
-<script type='text/javascript'>
-    (function(m, ei, q, i, a, j, s) {
-        m[i] = m[i] || function() {
-                (m[i].a = m[i].a || []).push(arguments)
-            };
-        j = ei.createElement(q),
-            s = ei.getElementsByTagName(q)[0];
-        j.async = true;
-        j.charset = 'UTF-8';
-        j.src = '//static.meiqia.com/dist/meiqia.js?_=t';
-        s.parentNode.insertBefore(j, s);
-    })(window, document, 'script', '_MEIQIA');
-    _MEIQIA('entId', 61007);
-</script>
 </body>
 </html>
