@@ -14,6 +14,7 @@
   "dependencies": {
     "fastclick": "^1.0.6",
     "raf.js": "0.0.4",
+    "twemoji": "^2.3.0",
     "vue": "^2.0.1",
     "vue-popup": "^0.2.9",
     "wind-dom": "0.0.3"
